@@ -111,7 +111,7 @@ resource "aws_security_group" "k8s-sg" {
 
 resource "aws_instance" "master" {
     ami = "ami-0d3cfbdc78e330d61"
-    instance_type = "t3.micro"
+    instance_type = "t3.small"
     vpc_security_group_ids = [ aws_security_group.k8s-sg.id ]
     subnet_id = aws_subnet.k8s-subnet.id
     key_name = aws_key_pair.awskey.key_name
